@@ -14,7 +14,7 @@ class Database:
             charset='utf8mb4',
             cursorclass=pymysql.cursors.DictCursor
         )
-        self.cursor = self.conn.cursor(dictionary=True)
+        self.cursor = self.conn.cursor()
 
     # Pobierz wszystkie rekordy z tabeli
     def fetch_all(self, table):
