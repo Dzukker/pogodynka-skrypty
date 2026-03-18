@@ -14,7 +14,7 @@ print('Gas: {} ohms'.format(sensor.gas))
 print('Humidity: {}%'.format(sensor.humidity))
 print('Pressure: {}hPa'.format(sensor.pressure))
 
-sql = "INSERT INTO `bme688` (`temperature`, `gas`, `humidity`, 'pressure') VALUES (%s, %s, %s)"
+sql = "INSERT INTO `bme688` (`temperature`, `gas`, `humidity`, `pressure`) VALUES (%s, %s, %s, %s)"
 db.execute(sql, (sensor.temperature, sensor.gas, sensor.humidity, sensor.pressure))
 
 db.close()
