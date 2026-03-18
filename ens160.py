@@ -19,14 +19,8 @@ ens.humidity_compensation = int(bme["humidity"])
 print("AQI (1-5):", ens.AQI)
 print("TVOC (ppb):", ens.TVOC)
 print("eCO2 (ppm):", ens.eCO2)
-print()
-
-
-aqi = int(ens.AQI)
-tvoc = int(ens.TVOC)
-eco2 = int(ens.eCO2)
 
 sql = "INSERT INTO `ens160` (`AQI`, `TVOC`, `eCO2`) VALUES (%s, %s, %s)"
-db.execute(sql, (aqi, tvoc, eco2))
+db.execute(sql, (int(ens.AQI), int(ens.TVOC), int(ens.eCO2)))
 
 db.close()
