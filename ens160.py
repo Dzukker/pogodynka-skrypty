@@ -10,8 +10,8 @@ ens = adafruit_ens160.ENS160(i2c)
 
 bme = db.fetch_latest("bme688")
 
-ens.temperature_compensation = bme["temperature"]
-ens.humidity_compensation = bme["humidity"]
+ens.temperature_compensation = int(bme["temperature"])
+ens.humidity_compensation = int(bme["humidity"])
 
 print("AQI (1-5):", ens.AQI)
 print("TVOC (ppb):", ens.TVOC)
