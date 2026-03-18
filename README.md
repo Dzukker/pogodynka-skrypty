@@ -1,0 +1,1 @@
+# skrypty do obslugi pogody
